@@ -23,6 +23,7 @@ export const FilterItem = ({ item }: any) => {
           {item.strCategory}
         </Text>
         <CheckBox
+          style={{ width: 40, height: 35 }}
           hideBox={true}
           lineWidth={2}
           disabled={false}
