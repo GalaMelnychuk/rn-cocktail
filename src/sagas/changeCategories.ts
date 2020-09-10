@@ -1,9 +1,9 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
 import { putDrinks } from '../redux/actions/drinksActions';
-import { GET_DRINKS } from '../redux/constans/drinksConstans';
+import { CHANGE_DRINKS } from '../redux/constans/drinksConstans';
 import { requests } from '../services/requests';
 
-function* drinksSagaWorker(action: any) {
+function* changeDrinksSagaWorker(action: any) {
   try {
     for (const item of action.payload) {
       const response = yield call(requests.getCoctails, item);
@@ -14,6 +14,6 @@ function* drinksSagaWorker(action: any) {
   }
 }
 
-export default function* drinksSagaWatcher() {
-  yield takeEvery(GET_DRINKS, drinksSagaWorker);
+export default function* changeDrinksSagaWatcher() {
+  yield takeEvery(CHANGE_DRINKS, changeDrinksSagaWorker);
 }

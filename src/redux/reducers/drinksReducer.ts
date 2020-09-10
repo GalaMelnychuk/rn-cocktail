@@ -9,7 +9,7 @@ export const drinksReducer = (state = [], action) => {
     case PUT_DRINKS:
       return [...state, action.payload];
     case CHANGE_DRINKS:
-      return [...action.payload];
+      return state.filter((elem) => elem.selected);
     default:
       return state;
   }

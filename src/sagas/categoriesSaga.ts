@@ -4,12 +4,11 @@ import { putCategories } from '../redux/actions/categoriesActions';
 import { loadDrinks } from '../redux/actions/drinksActions';
 import { requests } from '../services/requests';
 
-function* categoriesSagaWorker(action: any) {
+function* categoriesSagaWorker() {
   try {
     const data = yield call(requests.getCategories);
     yield put(putCategories(data.data.drinks));
     const arr = data.data.drinks.map((elem) => elem.strCategory);
-    // console.log('arr', arr);
     yield put(loadDrinks(arr));
   } catch (error) {
     console.log(error, error);

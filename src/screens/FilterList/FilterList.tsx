@@ -1,25 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, SafeAreaView, FlatList, CheckBox } from 'react-native';
+import React from 'react';
+import { View, Text, SafeAreaView, FlatList } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { getCategories } from '../../redux/actions/categoriesActions';
-import { loadDrinks, filterDrinks } from '../../redux/actions/drinksActions';
 
-import { requests } from '../../services/requests';
+import { filterDrinks } from '../../redux/actions/drinksActions';
 import { FilterItem } from '../../components/FilterItem/FilterItem';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export const FilterList = ({ navigation }) => {
   const categories = useSelector((state) => state.categories);
-  const firstArrCateg = categories.map((elem) => elem.strCategory);
-  console.log('firstArrCateg :>> ', firstArrCateg);
+  const chosenCategory = categories.filter((elem) => elem.selected).map((elem) => elem.strCategory);
   const dispatch = useDispatch();
 
-  const chosenCategory = categories.filter((elem) => elem.selected).map((elem) => elem.strCategory);
-
-  const sendSelectedCategory = async () => {
-    await dispatch(loadDrinks(chosenCategory));
-    await dispatch(filterDrinks(chosenCategory));
-    await navigation.navigate('Drinks');
+  const sendSelectedCategory = () => {
+    dispatch(filterDrinks(chosenCategory));
+    navigation.navigate('Drinks');
   };
 
   return (

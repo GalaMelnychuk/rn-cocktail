@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 const BASE_URL = 'https://www.thecocktaildb.com/api/json/v1/1';
 
 export const requests = {
@@ -27,18 +26,5 @@ export const requests = {
     } catch (error) {
       console.log('error', error);
     }
-
-    // console.log('cock', cock);
-    // try {
-    //   const response = await axios({
-    //     url: `${BASE_URL}/filter.php?c=${categ}`,
-    //     method: 'get',
-    //   });
-    //   // const data = { name: categ, coctails: response.data.drinks };
-    //   // console.log('data', data);
-    //   return response;
-    // } catch (error) {
-    //   console.log('error', error);
-    // }
   },
 };

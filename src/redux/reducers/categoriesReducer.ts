@@ -1,4 +1,5 @@
 import { PUT_CATEGORIES, SET_CATEGORIES, ICategory } from '../constans/categoriesConstans';
+
 const initialState: Array<ICategory> = [];
 
 export const categories = (state = initialState, action) => {
