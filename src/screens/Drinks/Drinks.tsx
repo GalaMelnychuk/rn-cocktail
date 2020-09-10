@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getCategories } from '../../redux/actions/categoriesActions';
 import { RootState } from '../../redux/reducers/rootReducer';
 import { DrinkGroup } from '../../components/DrinkGroup/DrinkGroup';
+import { styles } from './stylesDrinks';
 
 export const Drinks = () => {
   const drinks = useSelector((state: RootState) => state.drinks);
@@ -15,7 +16,7 @@ export const Drinks = () => {
 
   return (
     <>
-      <View style={{ flex: 1, backgroundColor: '#fff' }}>
+      <View style={styles.container}>
         <SafeAreaView>
           <View>
             <FlatList

@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { useDispatch } from 'react-redux';
 import CheckBox from '@react-native-community/checkbox';
 import { setCategories } from '../../redux/actions/categoriesActions';
+import { styles } from './stylesFilterItem';
 
 export const FilterItem = ({ item }: any) => {
   const dispatch = useDispatch();
@@ -17,13 +18,11 @@ export const FilterItem = ({ item }: any) => {
   };
 
   return (
-    <View style={{}}>
-      <View style={{ flexDirection: 'row', marginBottom: 20, justifyContent: 'space-between' }}>
-        <Text style={{ margin: 8, color: '#7E7E7E', fontSize: 16, lineHeight: 19 }}>
-          {item.strCategory}
-        </Text>
+    <View>
+      <View style={styles.container}>
+        <Text style={styles.textCategiry}>{item.strCategory}</Text>
         <CheckBox
-          style={{ width: 40, height: 35 }}
+          style={styles.checkBox}
           hideBox={true}
           lineWidth={2}
           disabled={false}
