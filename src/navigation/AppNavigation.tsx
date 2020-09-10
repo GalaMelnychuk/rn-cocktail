@@ -4,7 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { FilterList } from '../screens/FilterList/FilterList';
 import { Drinks } from '../screens/Drinks/Drinks';
-import { Header } from '../screens/Drinks/Header';
 
 const Stack = createStackNavigator();
 

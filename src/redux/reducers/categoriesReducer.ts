@@ -2,10 +2,10 @@ import { PUT_CATEGORIES, SET_CATEGORIES, ICategory } from '../constans/categorie
 
 const initialState: Array<ICategory> = [];
 
-export const categories = (state = initialState, action) => {
+export const categories = (state = initialState, action: any) => {
   switch (action.type) {
     case PUT_CATEGORIES:
-      return action.payload.map((elem) => {
+      return action.payload.map((elem: ICategory) => {
         elem.selected = true;
         return elem;
       });

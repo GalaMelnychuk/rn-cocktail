@@ -4,4 +4,5 @@ export const SET_CATEGORIES = '@categories/SET_CATEGORIES';
 
 export interface ICategory {
   strCategory: string;
+  selected: boolean;
 }

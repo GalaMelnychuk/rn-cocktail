@@ -4,8 +4,6 @@ import { useDispatch } from 'react-redux';
 import CheckBox from '@react-native-community/checkbox';
 import { setCategories } from '../../redux/actions/categoriesActions';
 
-// import { ICategory } from '../../redux/constans/categoriesConstans';
-
 export const FilterItem = ({ item }: any) => {
   const dispatch = useDispatch();
 

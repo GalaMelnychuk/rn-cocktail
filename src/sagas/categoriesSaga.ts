@@ -1,5 +1,5 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
-import { GET_CATEGORIES } from '../redux/constans/categoriesConstans';
+import { GET_CATEGORIES, ICategory } from '../redux/constans/categoriesConstans';
 import { putCategories } from '../redux/actions/categoriesActions';
 import { loadDrinks } from '../redux/actions/drinksActions';
 import { requests } from '../services/requests';
@@ -8,7 +8,7 @@ function* categoriesSagaWorker() {
   try {
     const data = yield call(requests.getCategories);
     yield put(putCategories(data.data.drinks));
-    const arr = data.data.drinks.map((elem) => elem.strCategory);
+    const arr = data.data.drinks.map((elem: ICategory) => elem.strCategory);
     yield put(loadDrinks(arr));
   } catch (error) {
     console.log(error, error);
