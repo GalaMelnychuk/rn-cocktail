@@ -42,6 +42,17 @@ export const content = (
       <Stack.Screen
         options={{
           title: 'Filters',
+          headerStyle: {
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+
+            elevation: 5,
+          },
           headerBackImage: () => (
             <Image
               style={{ width: 29, height: 24, marginLeft: 20 }}
@@ -50,9 +61,6 @@ export const content = (
           ),
           headerTitleStyle: {
             fontSize: 24,
-          },
-          headerStyle: {
-            backgroundColor: '#fff',
           },
         }}
         name='Filter'

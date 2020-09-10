@@ -17,21 +17,37 @@ export const FilterList = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView>
-      <View>
-        <FlatList
-          data={categories}
-          keyExtractor={(item) => item.strCategory}
-          renderItem={({ item }) => <FilterItem item={item} />}
-        />
-      </View>
-      <TouchableOpacity
-        style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#272727' }}
-        onPress={sendSelectedCategory}>
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: '#fff',
+        paddingTop: 20,
+        paddingVertical: 20,
+        paddingHorizontal: 35,
+      }}>
+      <SafeAreaView>
         <View>
-          <Text style={{ color: '#FFFFFF' }}>APPLY</Text>
+          <FlatList
+            data={categories}
+            keyExtractor={(item) => item.strCategory}
+            renderItem={({ item }) => <FilterItem item={item} />}
+          />
         </View>
-      </TouchableOpacity>
-    </SafeAreaView>
+        <TouchableOpacity
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#272727',
+            paddingVertical: 17,
+          }}
+          onPress={sendSelectedCategory}>
+          <View>
+            <Text style={{ color: '#FFFFFF', fontSize: 16, lineHeight: 19, fontWeight: '600' }}>
+              APPLY
+            </Text>
+          </View>
+        </TouchableOpacity>
+      </SafeAreaView>
+    </View>
   );
 };

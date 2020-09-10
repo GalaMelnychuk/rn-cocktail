@@ -17,18 +17,17 @@ export const FilterItem = ({ item }: any) => {
   };
 
   return (
-    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-      <View style={{ flexDirection: 'row', marginBottom: 20 }}>
-        <Text style={{ margin: 8 }}>{item.strCategory}</Text>
+    <View style={{}}>
+      <View style={{ flexDirection: 'row', marginBottom: 20, justifyContent: 'space-between' }}>
+        <Text style={{ margin: 8, color: '#7E7E7E', fontSize: 16, lineHeight: 19 }}>
+          {item.strCategory}
+        </Text>
         <CheckBox
-          style={{ width: 35, height: 20 }}
+          hideBox={true}
           lineWidth={2}
           disabled={false}
-          boxType={'square'}
-          tintColor={'rgba(173, 171, 182, 0.4'}
-          tintColors={{ true: '#FFD324', false: 'rgba(173, 171, 182, 0.4' }}
-          onCheckColor={'#FFD324'}
-          onTintColor={'#FFD324'}
+          onCheckColor={'#000000'}
+          onTintColor={'#000000'}
           animationDuration={0.2}
           value={toggleCheckBox}
           onValueChange={func}
