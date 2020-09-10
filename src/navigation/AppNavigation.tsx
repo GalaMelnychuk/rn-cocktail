@@ -21,6 +21,17 @@ export const content = (
       <Stack.Screen
         options={({ navigation }) => ({
           title: '',
+          headerStyle: {
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+
+            elevation: 5,
+          },
           headerRight: () => <BtnFilter navigation={navigation} />,
           headerLeft: () => <Text style={{ fontSize: 24, marginLeft: 30 }}>Drinks</Text>,
         })}

@@ -15,15 +15,17 @@ export const Drinks = () => {
 
   return (
     <>
-      <SafeAreaView>
-        <View>
-          <FlatList
-            data={drinks}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => <DrinkGroup item={item} />}
-          />
-        </View>
-      </SafeAreaView>
+      <View style={{ flex: 1, backgroundColor: '#fff' }}>
+        <SafeAreaView>
+          <View>
+            <FlatList
+              data={drinks}
+              keyExtractor={(item) => item.id}
+              renderItem={({ item }) => <DrinkGroup item={item} />}
+            />
+          </View>
+        </SafeAreaView>
+      </View>
     </>
   );
 };
